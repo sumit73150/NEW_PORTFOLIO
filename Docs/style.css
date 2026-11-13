@@ -1,0 +1,733 @@
+:root {
+  --cr: #fdf3ea;
+  --cr2: #f8e6d8;
+  --co: #f26b45;
+  --co2: #ff9a6c;
+  --bk: #0c0a09;
+  --bk2: #1a1512;
+  --tx: #17110e;
+  --tx2: #6e625b;
+  --bd: #ebd8c8;
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+body {
+  margin: 0;
+  background: var(--cr);
+  color: var(--tx);
+  font:
+    15.5px/1.65 Inter,
+    system-ui,
+    sans-serif;
+  overflow-x: hidden;
+}
+h1,
+h2,
+h3 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+p {
+  margin: 0;
+}
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+section {
+  padding: 84px 0;
+  position: relative;
+}
+.lab {
+  font-size: 11.5px;
+  letter-spacing: 0.2em;
+  color: var(--co);
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+h2 {
+  font-size: clamp(34px, 5vw, 56px);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin-bottom: 26px;
+}
+.sub {
+  color: var(--tx2);
+  max-width: 520px;
+}
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(253, 243, 234, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--bd);
+}
+nav .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+.logo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 30px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo small {
+  font: 500 10px/1.3 Inter;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.links {
+  display: flex;
+  gap: 26px;
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.links a:hover {
+  color: var(--co);
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 99px;
+  font: 600 11.5px Inter;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1px solid var(--bk);
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    background 0.2s,
+    color 0.2s;
+}
+.btn.p {
+  background: var(--bk);
+  color: #fff;
+}
+.btn.s {
+  background: transparent;
+  color: var(--tx);
+}
+.btn.c {
+  background: var(--co);
+  border-color: var(--co);
+  color: #fff;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn.s:hover {
+  background: var(--bk);
+  color: #fff;
+}
+.ul {
+  font-size: 11.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border-bottom: 1.5px solid var(--co);
+  padding-bottom: 3px;
+}
+:focus-visible {
+  outline: 2px solid var(--co);
+  outline-offset: 3px;
+}
+#menu {
+  display: none;
+  background: none;
+  border: 1px solid var(--bd);
+  border-radius: 99px;
+  padding: 8px 16px;
+  font: 500 12px Inter;
+}
+.hero {
+  padding: 60px 0 0;
+  overflow: hidden;
+  background: var(--cr);
+}
+.hero .wrap {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 20px;
+  align-items: end;
+  min-height: 600px;
+}
+.hero .t {
+  padding-bottom: 70px;
+}
+.hero h1 {
+  font-size: clamp(58px, 9.5vw, 128px);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin: 6px 0 24px;
+}
+.hero h1 span {
+  color: var(--co);
+  display: block;
+}
+.hero .sub {
+  margin-bottom: 28px;
+  color: var(--tx);
+  font-size: 16.5px;
+}
+.cta {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.stats {
+  display: flex;
+  gap: 28px;
+  margin-top: 40px;
+}
+.stats div {
+  border-left: 1px solid var(--bd);
+  padding-left: 20px;
+}
+.stats div:first-child {
+  border: 0;
+  padding: 0;
+}
+.stats b {
+  font:
+    500 44px "Cormorant Garamond",
+    serif;
+  color: var(--co);
+  display: block;
+}
+.stats span {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--tx2);
+}
+.stage {
+  position: relative;
+  height: 100%;
+  min-height: 520px;
+}
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--co2);
+  opacity: 0.9;
+}
+.b1 {
+  width: 78%;
+  aspect-ratio: 1;
+  right: -8%;
+  top: 6%;
+  background: linear-gradient(150deg, var(--co2), var(--co));
+  border-radius: 56% 44% 50% 50%/46% 54% 46% 54%;
+  animation: mor 12s ease-in-out infinite alternate;
+}
+.b2 {
+  width: 84px;
+  height: 84px;
+  left: 4%;
+  top: 4%;
+}
+@keyframes mor {
+  to {
+    border-radius: 44% 56% 42% 58%/58% 42% 58% 42%;
+  }
+}
+.pt {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 62%;
+  height: 84%;
+  border-radius: 200px 200px 0 0;
+  background: linear-gradient(180deg, #2a211c, var(--bk));
+  display: grid;
+  place-items: center;
+  color: #ffd8c6;
+  font:
+    500 clamp(70px, 10vw, 130px) "Cormorant Garamond",
+    serif;
+}
+.pt small {
+  position: absolute;
+  bottom: 14px;
+  font: 400 10px Inter;
+  opacity: 0.6;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+.sig {
+  position: absolute;
+  left: 2%;
+  top: 46%;
+  font:
+    italic 500 34px "Cormorant Garamond",
+    serif;
+  transform: rotate(-14deg);
+  color: var(--bk);
+  line-height: 1;
+}
+.roles {
+  position: absolute;
+  right: 0;
+  top: 38%;
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-align: right;
+  line-height: 2;
+  color: var(--tx2);
+}
+.spin {
+  position: absolute;
+  right: 2%;
+  bottom: 6%;
+  width: 104px;
+  animation: rot 22s linear infinite;
+}
+@keyframes rot {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.split {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 0;
+}
+.split .l {
+  padding: 84px 48px 84px max(24px, calc((100vw - 1180px) / 2 + 24px));
+}
+.dkpanel {
+  background: linear-gradient(135deg, #0c0a09 30%, #6b2a18 70%, var(--co));
+  
+  display: flex;
+  align-items: flex-end;
+  padding: 48px;
+  color: #fff;
+  font:
+    500 22px/1.7 "Cormorant Garamond",
+    serif;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  min-height: 320px;
+}
+.grid {
+  display: grid;
+  gap: 16px;
+}
+.g4 {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.g3 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.card {
+  background: #fffaf5;
+  border: 1px solid var(--bd);
+  border-radius: 6px;
+  padding: 22px;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(242, 107, 69, 0.14);
+}
+.card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.muted {
+  color: var(--tx2);
+  font-size: 14px;
+}
+.ico {
+  color: var(--co);
+  font:
+    500 26px "Cormorant Garamond",
+    serif;
+  margin-bottom: 10px;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chip {
+  border: 1px solid var(--bd);
+  background: var(--cr);
+  border-radius: 99px;
+  padding: 4px 13px;
+  font-size: 12.5px;
+}
+.alt {
+  background: var(--cr2);
+}
+.dk {
+  background: var(--bk);
+  color: #f5e8de;
+}
+.dk h2 {
+  color: #fff;
+}
+.dk .sub,
+.dk .muted {
+  color: #b9aaa0;
+}
+.dk .card {
+  background: var(--bk2);
+  border-color: #2b231e;
+}
+.dk .chip {
+  background: transparent;
+  border-color: #3a2f28;
+  color: #e8d8cc;
+}
+.dk .card h3 {
+  color: #fff;
+}
+.dk .grad {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 42%;
+  background: linear-gradient(120deg, transparent, rgba(242, 107, 69, 0.7));
+  pointer-events: none;
+}
+.tl {
+  display: grid;
+  gap: 14px;
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  border-left: 1px solid #3a2f28;
+  padding-left: 26px;
+}
+.tl .card {
+  position: relative;
+}
+.tl .card::before {
+  content: "";
+  position: absolute;
+  left: -33px;
+  top: 28px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--co);
+  border: 3px solid var(--bk);
+}
+.role {
+  color: var(--co2);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.proj {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.shot {
+  height: 170px;
+  background: linear-gradient(135deg, var(--bk), #5a2314 60%, var(--co));
+  display: grid;
+  place-items: center;
+  font:
+    500 28px "Cormorant Garamond",
+    serif;
+  color: #fff;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  position: relative;
+  text-align: center;
+  padding: 0 12px;
+}
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--cr);
+  color: var(--tx);
+  font: 600 10px Inter;
+  letter-spacing: 0.12em;
+  padding: 4px 10px;
+  text-transform: uppercase;
+}
+.proj .body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+.proj h3 {
+  margin: 0;
+}
+.acts {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+.acts .btn {
+  padding: 9px 16px;
+  font-size: 10.5px;
+}
+.big {
+  font:
+    500 52px "Cormorant Garamond",
+    serif;
+  color: var(--co2);
+}
+.repo {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #2b231e;
+  font-size: 14px;
+}
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  padding: 0;
+}
+.contact .l {
+  background: linear-gradient(160deg, #0c0a09, #2b1710);
+  color: #fff;
+  padding: 84px 48px 84px max(24px, calc((100vw - 1180px) / 2 + 24px));
+}
+.contact .l h2 {
+  font-size: clamp(46px, 7vw, 84px);
+  margin-bottom: 20px;
+}
+.contact .l h2 span {
+  color: var(--co);
+  display: block;
+}
+.contact .r {
+  padding: 84px max(24px, calc((100vw - 1180px) / 2 + 24px)) 84px 48px;
+}
+.contact .r h2 {
+  font-size: 34px;
+  text-transform: none;
+}
+form {
+  display: grid;
+  gap: 12px;
+}
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+input,
+textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--bd);
+  border-radius: 4px;
+  background: #fffaf5;
+  font: inherit;
+  color: var(--tx);
+}
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.err {
+  color: #b3261e;
+  font-size: 12.5px;
+  min-height: 16px;
+}
+.info {
+  display: grid;
+  gap: 8px;
+  margin-top: 26px;
+  font-size: 14px;
+}
+.info a {
+  color: var(--co);
+}
+footer {
+  background: var(--bk);
+  color: #b9aaa0;
+  padding: 36px 0;
+  font-size: 13px;
+}
+footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+footer nav2 a,
+footer .fl a {
+  margin-right: 20px;
+}
+footer a:hover {
+  color: var(--co2);
+}
+footer .logo {
+  color: #fff;
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 10, 9, 0.7);
+  display: none;
+  place-items: center;
+  z-index: 50;
+  padding: 20px;
+}
+.modal.on {
+  display: grid;
+}
+.box {
+  background: var(--cr);
+  border-radius: 8px;
+  max-width: 540px;
+  width: 100%;
+  padding: 32px;
+  max-height: 90vh;
+  overflow: auto;
+  animation: pop 0.25s;
+}
+@keyframes pop {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+}
+.box ul {
+  color: var(--tx2);
+  padding-left: 18px;
+}
+#toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bk);
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 99px;
+  font-size: 13px;
+  display: none;
+  z-index: 60;
+}
+@media (max-width: 860px) {
+  .links {
+    display: none;
+  }
+  .links.on {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: var(--cr);
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--bd);
+  }
+  #menu {
+    display: block;
+  }
+  .hero .wrap,
+  .split,
+  .contact {
+    grid-template-columns: 1fr;
+  }
+  .hero .t {
+    padding-bottom: 20px;
+  }
+  .stage {
+    min-height: 420px;
+  }
+  .split .l,
+  .contact .l,
+  .contact .r {
+    padding: 60px 24px;
+  }
+  .row {
+    grid-template-columns: 1fr;
+  }
+  .dk .grad {
+    display: none;
+  }
+  .roles {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto;
+  }
+}
+
+
+.pt {
+    width: 340px;
+    height: 430px;
+    overflow: hidden;
+    border-radius: 180px 180px 20px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.pt img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.pt:hover img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .pt {
+        width: 260px;
+        height: 340px;
+    }
+}
